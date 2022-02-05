@@ -6,10 +6,12 @@ import style from '../../../styles/algorithms/bubbleSort.module.css'
 
 const BubbleSort: NextPage = () => {
   const numbers = useMemo(() => [1, 9, 3, 5, 0, 4, 8, 2, 7, 6], [])
-  // const steps: number[][] = []
   const [steps, setSteps] = useState<number[][]>()
+  const [index, setIndex] = useState<number>(0)
 
   const sort = (numbers: number[]) => {
+    numbers = JSON.parse(JSON.stringify(numbers))
+
     const steps: number[][] = []
 
     let step: number[] = JSON.parse(JSON.stringify(numbers))
@@ -31,8 +33,6 @@ const BubbleSort: NextPage = () => {
     return steps
   }
 
-  // const steps = sort(numbers)
-
   useEffect(() => setSteps(sort(numbers)), [numbers])
 
   return (
@@ -44,7 +44,17 @@ const BubbleSort: NextPage = () => {
       <div className={baseStyle.container}>
         <h1 className={baseStyle.title}>Bubble Sort</h1>
         <div className={style.numbers}>
-          numbers: {`[${steps?.[0].join(', ')}]`}
+          numbers: {`[${numbers.join(', ')}]`}
+        </div>
+
+        <div className={style['visual-wrapper']}>
+          <div className={style['number-wrapper']}>
+            {steps?.[index].map((number, i) => (
+              <div key={i} className={style['number-block']}>
+                {number}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className={style['steps-container']}>

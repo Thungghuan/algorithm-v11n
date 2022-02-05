@@ -2,11 +2,34 @@
   font-size: 1.4rem;
 }
 
-.steps-container {
-  padding: 2rem;
-  width: 100%;
+.visual-wrapper {
+  margin: 2rem auto;
+  padding: 4rem 0;
+  border: 1px solid black;
 }
 
+.number-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.number-block {
+  margin: 0 2px;
+  padding: 2.4vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+  font-size: 2vw;
+}
+
+.steps-container {
+  padding: 2rem;
+  margin: 0 auto;
+  max-width: 46vw;
+}
 
 .steps-title {
   margin: 20px;
