@@ -44,13 +44,15 @@ const BubbleSort: NextPage = () => {
       <div className={baseStyle.container}>
         <h1 className={baseStyle.title}>Bubble Sort</h1>
         <div className={style.numbers}>
-          numbers: {`[${numbers.join(', ')}]`}
+          numbers: {`[${steps?.[0].join(', ')}]`}
         </div>
 
         <div className={style['steps-container']}>
           <p className={style['steps-title']}>Steps:</p>
           {steps?.map((step, i) => (
-            <p key={i}>{step.join(', ')}</p>
+            <p key={i}>
+              {i + 1}. {step.join(', ')}
+            </p>
           ))}
         </div>
       </div>
