@@ -1,0 +1,15 @@
+.numbers {
+  font-size: 1.4rem;
+}
+
+.steps-container {
+  padding: 2rem;
+  width: 100%;
+}
+
+
+.steps-title {
+  margin: 20px;
+  text-align: left;
+  font-size: 2rem;
+}
